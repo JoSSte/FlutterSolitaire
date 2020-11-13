@@ -42,7 +42,7 @@ class _GameScreenState extends State<GameScreen> {
     return Scaffold(
       backgroundColor: Colors.green,
       appBar: AppBar(
-        title: Text("Flutter Solitaire"),
+        title: Text("Super Solitaire"),
         elevation: 0.0,
         backgroundColor: Colors.green,
         actions: <Widget>[
@@ -459,6 +459,7 @@ class _GameScreenState extends State<GameScreen> {
             finalClubsDeck.length +
             finalSpadesDeck.length ==
         52) {
+      //player has won!
       _handleWin();
     }
     setState(() {
@@ -475,6 +476,7 @@ class _GameScreenState extends State<GameScreen> {
     showDialog(
       context: context,
       builder: (context) {
+        //TODO: add time taken.
         return AlertDialog(
           title: Text("Congratulations!"),
           content: Text("You Win!"),
